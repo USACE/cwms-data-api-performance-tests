@@ -11,9 +11,24 @@ on:
     - cron: '0 12 * * 1,3,5'
 
   workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  APIDockerImage:
-    name: Testing Image
+  test:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    name: Test API
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,18 +40,18 @@ jobs:
 
       - name: Test API
         run: ./run_tests.sh
-
-      - name: Commit & Push
-        uses: Andro999b/push@v1.3
+        # Outputs test results index.html in docs/index.html
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          force: true
-          message: 'Overwritten by Github Actions - ${date}'
+          # Upload entire repository
+          path: 'docs/'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
 
-      # - name: Upload Newman HTML results
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: results-report
-      #     # path: /output/index.html
-      #     path: ${{ github.workspace }}/docs/index.html
