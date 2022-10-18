@@ -26,9 +26,9 @@ jobs:
       - name: Test API
         run: ./run_tests.sh
 
-      - name: Upload Newman HTML results
-        uses: actions/upload-artifact@v3
-        with:
-          name: results-report
-          # path: /output/index.html
-          path: ${{ github.workspace }}/docs/index.html
+      # - name: Upload Newman HTML results
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: results-report
+      #     # path: /output/index.html
+      #     path: ${{ github.workspace }}/docs/index.html
