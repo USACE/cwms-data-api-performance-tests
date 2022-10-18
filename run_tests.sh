@@ -13,7 +13,8 @@ docker run \
         --reporter-htmlextra-browserTitle 'CWMS RADAR Results' \
         --reporter-htmlextra-title 'CWMS RADAR Results' \
         --reporter-htmlextra-titleSize '4' \
-        --reporter-htmlextra-export /output/index.html"
+        --reporter-htmlextra-export /output/index.html \
+        --suppress-exit-code"
 
 
 # docker build -t postman/newman . && docker run -v $(pwd)/tests:/etc/newman -v $(pwd)/docs:/output postman/newman
