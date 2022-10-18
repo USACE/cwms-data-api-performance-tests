@@ -10,9 +10,9 @@ docker run \
         -r htmlextra --reporter-htmlextra-noSyntaxHightlighting \
         --reporter-htmlextra-export --reporter-htmlextra-noSyntaxHightlighting \
         --reporter-htmlextra-template /etc/newman/dashboard-template.hbs \
-        --reporter-htmlextra-browserTitle, 'CWMS RADAR Results', \
+        --reporter-htmlextra-browserTitle, 'CWMS RADAR Results' \
         --reporter-htmlextra-title 'CWMS RADAR Results' \
-        --reporter-htmlextra-titleSize '4', \
+        --reporter-htmlextra-titleSize '4' \
         --reporter-htmlextra-export /output/index.html"
 
 
