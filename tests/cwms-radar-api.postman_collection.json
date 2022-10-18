@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "1ac8a0a1-2ccc-4535-8e2b-110926cadaf5",
+		"name": "cwms-radar-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20040250"
+	},
+	"item": [
+		{
+			"name": "cwms-data",
+			"item": [
+				{
+					"name": "location-categories",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/location/category",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All by Category ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/location/category/Flow?office=SPK",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"category",
+										"Flow"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "SPK"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "location-group",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/location/group",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"group"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "locations",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 5 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/locations",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (Small Office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/locations?office=LRB",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRB"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (Large Office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 3 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/locations?office=NWDM",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "NWDM"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One (by location and office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/locations?names=Bluestone-Lake&office=LRH",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									],
+									"query": [
+										{
+											"key": "names",
+											"value": "Bluestone-Lake"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"if(pm.environment.get(\"base_url\") == null){",
+							"    pm.environment.set(\"base_url\", \"localhost\");",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

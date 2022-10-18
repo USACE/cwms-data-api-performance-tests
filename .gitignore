@@ -1,0 +1,13 @@
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.zip
+
+**.DS_Store
+
+# Regression Test Results
+tests/*.html
