@@ -10,4 +10,4 @@
 **.DS_Store
 
 # Regression Test Results
-tests/*.html
+docs/index.html
