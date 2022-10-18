@@ -26,6 +26,20 @@ jobs:
       - name: Test API
         run: ./run_tests.sh
 
+      - name: Overwrite file
+        uses: 'DamianReeves/write-file-action@master'
+        with:
+          path: /output/index.html
+          write-mode: overwrite
+
+      - name: Commit & Push
+        uses: Andro999b/push@v1.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          force: true
+          message: 'Overwritten by Github Actions - ${date}'
+
       # - name: Upload Newman HTML results
       #   uses: actions/upload-artifact@v3
       #   with:
