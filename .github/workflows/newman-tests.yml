@@ -20,7 +20,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Test API
         run: ./run_tests.sh
+
+      - name: Upload code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: results-report
+          path: output/index.html
