@@ -26,11 +26,9 @@ jobs:
       - name: Test API
         run: ./run_tests.sh
 
-      - name: Overwrite file
-        uses: 'DamianReeves/write-file-action@master'
-        with:
-          path: /output/index.html
-          write-mode: overwrite
+      - name: copy results file
+        run: |
+          cp /output/index.html ${{ github.workspace }}/docs/index.html
 
       - name: Commit & Push
         uses: Andro999b/push@v1.3
