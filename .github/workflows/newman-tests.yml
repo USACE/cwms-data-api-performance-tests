@@ -24,11 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Test API
-        run: ./run_tests.sh && df -h
-
-      # - name: copy results file
-      #   run: |
-      #     cp /output/index.html ${{ github.workspace }}/docs/index.html
+        run: ./run_tests.sh
 
       - name: Commit & Push
         uses: Andro999b/push@v1.3
