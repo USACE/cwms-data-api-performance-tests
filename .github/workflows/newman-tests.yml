@@ -30,4 +30,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: results-report
-          path: /output/index.html
+          # path: /output/index.html
+          path: ${{ github.workspace }}/docs/index.html
