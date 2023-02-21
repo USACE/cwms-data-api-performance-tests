@@ -121,7 +121,14 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/location/group",
 									"host": [
@@ -163,7 +170,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/locations",
 									"host": [
@@ -199,7 +212,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/locations?office=LRB",
 									"host": [
@@ -241,7 +260,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/locations?office=NWDM",
 									"host": [
@@ -283,7 +308,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/locations?names=Bluestone*&office=LRH",
 									"host": [
@@ -329,20 +360,23 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": "{{base_url}}/locations?names=Bluestone-Lake&office=LRH",
+									"raw": "{{base_url}}/locations/Bluestone-Lake?office=LRH",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
-										"locations"
+										"locations",
+										"Bluestone-Lake"
 									],
 									"query": [
-										{
-											"key": "names",
-											"value": "Bluestone-Lake"
-										},
 										{
 											"key": "office",
 											"value": "LRH"
@@ -380,7 +414,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/offices",
 									"host": [
@@ -416,7 +456,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/offices/SPK",
 									"host": [
@@ -581,7 +627,13 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{base_url}}/levels",
 									"host": [
@@ -617,9 +669,15 @@
 							],
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": "{{base_url}}/levels?office=LRB",
+									"raw": "{{base_url}}/levels?office=LRB&begin=2022-01-01T17:00:00Z&format=json",
 									"host": [
 										"{{base_url}}"
 									],
@@ -630,6 +688,14 @@
 										{
 											"key": "office",
 											"value": "LRB"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
 										}
 									]
 								}
@@ -661,7 +727,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/levels?office=NWDM",
+									"raw": "{{base_url}}/levels?office=NWDM&begin=2022-01-01T17:00:00Z&format=json",
 									"host": [
 										"{{base_url}}"
 									],
@@ -672,6 +738,14 @@
 										{
 											"key": "office",
 											"value": "NWDM"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
 										}
 									]
 								}
@@ -703,7 +777,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/levels?name=Bluestone*&office=LRH",
+									"raw": "{{base_url}}/levels?name=Bluestone*&office=LRH&begin=2022-01-01T17:00:00Z&format=json",
 									"host": [
 										"{{base_url}}"
 									],
@@ -718,6 +792,14 @@
 										{
 											"key": "office",
 											"value": "LRH"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
 										}
 									]
 								}
@@ -749,7 +831,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/levels?name=Bluestone.Elev.Inst.0.Streambed&office=LRH",
+									"raw": "{{base_url}}/levels?name=Bluestone.Elev.Inst.0.Streambed&office=LRH&begin=2022-01-01T17:00:00Z&format=json",
 									"host": [
 										"{{base_url}}"
 									],
@@ -764,6 +846,14 @@
 										{
 											"key": "office",
 											"value": "LRH"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
 										}
 									]
 								}
@@ -1154,6 +1244,10 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "ratings",
+					"item": []
 				}
 			],
 			"event": [
