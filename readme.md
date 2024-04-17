@@ -1,6 +1,6 @@
-# CWMS RADAR API Performance Tests
+# CWMS Data API Performance Tests
 
-Results: https://usace.github.io/cwms-radar-api-performance-tests/
+Results: https://usace.github.io/cwms-data-api-performance-tests/
 
 ---
 

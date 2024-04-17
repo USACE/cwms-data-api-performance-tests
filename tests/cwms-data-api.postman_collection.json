@@ -1,0 +1,1431 @@
+{
+	"info": {
+		"_postman_id": "35c2adb2-1536-4ba6-8651-5f95525a39bc",
+		"name": "cwms-data-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20040250"
+	},
+	"item": [
+		{
+			"name": "cwms-data",
+			"item": [
+				{
+					"name": "location-categories",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/location/category",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Single Office",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/location/category?office=LRH",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"category"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRH"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All by Category ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/location/category/Flow?office=SPK",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"category",
+										"Flow"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "SPK"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "location-group",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/location/group",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All - Single Office",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/location/group?office=LRH",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"group"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRH"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Basins - Single Office",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/location/group?office=LRH&include-assigned=true&location-category-like=Basins",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"location",
+										"group"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRH"
+										},
+										{
+											"key": "include-assigned",
+											"value": "true"
+										},
+										{
+											"key": "location-category-like",
+											"value": "Basins"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "locations",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 10 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(10000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/locations",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (Small Office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/locations?office=LRB",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRB"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (Large Office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 3 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/locations?office=NWDM",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "NWDM"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (location wildcard and office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/locations?names=Bluestone*&office=LRH",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations"
+									],
+									"query": [
+										{
+											"key": "names",
+											"value": "Bluestone*"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One (by location and office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500 ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/locations/Bluestone-Lake?office=LRH",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"locations",
+										"Bluestone-Lake"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRH"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "offices",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500 ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/offices",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"offices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500 ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/offices/SPK",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"offices",
+										"SPK"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "units",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500 ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/units",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"units"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "parameters",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500 ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/parameters",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"parameters"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "timezones",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500 ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timezones",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timezones"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "levels",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 10 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(10000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json;version=2",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/levels",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"levels"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (Small Office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/levels?office=LRB&begin=2022-01-01T17:00:00Z&format=json",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"levels"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRB"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (Large Office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 3 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/levels?office=NWDM&begin=2022-01-01T17:00:00Z&format=json",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"levels"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "NWDM"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (location wildcard and office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 3 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/levels?name=Bluestone*&office=LRH&begin=2022-01-01T17:00:00Z&format=json",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"levels"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Bluestone*"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One (by level and office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/levels?name=Bluestone.Elev.Inst.0.Streambed&office=LRH&begin=2022-01-01T17:00:00Z&format=json",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"levels"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Bluestone.Elev.Inst.0.Streambed"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										},
+										{
+											"key": "begin",
+											"value": "2022-01-01T17:00:00Z"
+										},
+										{
+											"key": "format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "timeseries-category",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries/category",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (single office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 500 ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries/category?office=NWDM",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries",
+										"category"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "NWDM"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "timeseries-group",
+					"item": [
+						{
+							"name": "List All",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 3 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries/group",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries",
+										"group"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List All (single office)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries/group?office=LRH",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries",
+										"group"
+									],
+									"query": [
+										{
+											"key": "office",
+											"value": "LRH"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "timeseries",
+					"item": [
+						{
+							"name": "List All Paths (Single Office - official names)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 3 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries?name=@&office=LRH",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "@"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One Path (tw=1day",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 1 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries?name=Bluestone-Lake.Elev.Inst.15Minutes.0.OBS&office=LRH&begin=2022-10-10T01:30:00Z&end=2022-10-11T01:30:00Z",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Bluestone-Lake.Elev.Inst.15Minutes.0.OBS"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										},
+										{
+											"key": "begin",
+											"value": "2022-10-10T01:30:00Z"
+										},
+										{
+											"key": "end",
+											"value": "2022-10-11T01:30:00Z"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One Path (tw=5days)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 3 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries?name=Bluestone-Lake.Elev.Inst.15Minutes.0.OBS&office=LRH&begin=2022-10-10T01:30:00Z&end=2022-10-15T01:30:00Z",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Bluestone-Lake.Elev.Inst.15Minutes.0.OBS"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										},
+										{
+											"key": "begin",
+											"value": "2022-10-10T01:30:00Z"
+										},
+										{
+											"key": "end",
+											"value": "2022-10-15T01:30:00Z"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One Path (tw=15days)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Response time is less than 5 sec\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);",
+											"});",
+											"pm.test(\"Valid JSON response\", function () {",
+											"    pm.expect(pm.response.json());",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/timeseries?name=Bluestone-Lake.Elev.Inst.15Minutes.0.OBS&office=LRH&begin=2022-10-01T01:30:00Z&end=2022-10-15T01:30:00Z",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"timeseries"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Bluestone-Lake.Elev.Inst.15Minutes.0.OBS"
+										},
+										{
+											"key": "office",
+											"value": "LRH"
+										},
+										{
+											"key": "begin",
+											"value": "2022-10-01T01:30:00Z"
+										},
+										{
+											"key": "end",
+											"value": "2022-10-15T01:30:00Z"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ratings",
+					"item": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"if(pm.environment.get(\"base_url\") == null){",
+							"    pm.environment.set(\"base_url\", \"localhost\");",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
